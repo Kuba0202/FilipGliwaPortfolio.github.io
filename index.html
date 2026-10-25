@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Filip Gliwa | Fotograf sportowy</title>
+<meta name="description" content="Moje portfolio, projekty, umiejętności i plany na przyszłość.">
+<style>
+:root {
+  --bg: #080b14;
+  --panel: #101625;
+  --text: #f3f6ff;
+  --muted: #a3adc2;
+  --blue: #5d8cff;
+  --cyan: #51e0dc;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+.container { width: min(1100px, 90%); margin: auto; }
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(8,11,20,.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #20283a;
+}
+nav {
+  min-height: 75px; display: flex;
+  align-items: center; justify-content: space-between; gap: 20px;
+}
+.logo { font-size: 23px; font-weight: 800; }
+.logo span { color: var(--blue); }
+.nav-links { display: flex; gap: 25px; list-style: none; }
+.nav-links a { color: var(--muted); font-size: 14px; }
+.nav-links a:hover { color: white; }
+.hero {
+  min-height: 590px; display: flex; align-items: center;
+  padding: 90px 0;
+  background: radial-gradient(ellipse at 80% 30%, #20366555, transparent 50%);
+}
+.tag {
+  display: inline-block; color: var(--cyan);
+  border: 1px solid #51e0dc55; background: #51e0dc0c;
+  border-radius: 30px; padding: 5px 13px;
+  font-size: 13px; margin-bottom: 22px;
+}
+h1 { font-size: clamp(40px, 7vw, 76px); line-height: 1.12; letter-spacing: -2px; }
+.gradient {
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  color: transparent; background-clip: text;
+}
+.hero p { max-width: 600px; color: var(--muted); margin: 24px 0 30px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 13px; }
+.btn {
+  display: inline-block; padding: 12px 22px;
+  border-radius: 9px; font-weight: bold; font-size: 14px;
+  border: 1px solid #303b52; transition: .2s;
+}
+.btn.primary { background: var(--blue); border-color: var(--blue); color: white; }
+.btn:hover { transform: translateY(-3px); filter: brightness(1.15); }
+section { padding: 85px 0; }
+.section-label { color: var(--cyan); font-size: 13px; text-transform: uppercase; letter-spacing: 3px; }
+h2 { font-size: clamp(29px, 4vw, 42px); margin: 10px 0 15px; }
+.subtitle { color: var(--muted); max-width: 650px; margin-bottom: 35px; }
+.about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 25px; }
+.panel, .card {
+  background: var(--panel); border: 1px solid #222c40;
+  border-radius: 16px; padding: 27px;
+}
+.panel p { color: var(--muted); margin-top: 12px; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.stat { padding: 20px; border-radius: 12px; background: #171f32; }
+.stat strong { display: block; font-size: 27px; color: var(--cyan); }
+.stat span { color: var(--muted); font-size: 13px; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card { transition: .25s; }
+.card:hover { transform: translateY(-5px); border-color: #5d8cff99; }
+.card-icon { font-size: 29px; margin-bottom: 15px; }
+.card h3 { margin-bottom: 9px; }
+.card p { color: var(--muted); font-size: 14px; }
+.pill {
+  display: inline-block; margin-top: 17px; margin-right: 5px;
+  padding: 4px 9px; background: #202b43;
+  color: #b9ccff; border-radius: 6px; font-size: 11px;
+}
+.skills { display: flex; flex-wrap: wrap; gap: 12px; }
+.skill {
+  background: #121a2a; border: 1px solid #2a3650;
+  padding: 12px 18px; border-radius: 9px; color: #dce5fa;
+}
+.contact-box {
+  text-align: center; padding: 50px 25px;
+  background: radial-gradient(ellipse at top, #20366566, transparent 70%), var(--panel);
+  border: 1px solid #283650; border-radius: 18px;
+}
+.contact-box p { color: var(--muted); margin: 15px auto 25px; max-width: 550px; }
+footer { border-top: 1px solid #20283a; padding: 25px 0; color: var(--muted); font-size: 13px; }
+.footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+@media(max-width: 750px) {
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 12px; }
+  .about-grid, .cards { grid-template-columns: 1fr; }
+  .hero { min-height: 500px; }
+}
+@media(max-width: 430px) {
+  nav { align-items: flex-start; padding: 16px 0; flex-direction: column; }
+  .nav-links { flex-wrap: wrap; }
+  section { padding: 60px 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a href="#home" class="logo">PORT<span>FOLIO.</span></a>
+    <ul class="nav-links">
+      <li><a href="#home">Start</a></li>
+      <li><a href="#about">O mnie</a></li>
+      <li><a href="#projects">Projekty</a></li>
+      <li><a href="#skills">Umiejętności</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <span class="tag">✦ Witaj w moim świecie</span>
+      <h1>Cześć, jestem<br><span class="gradient">Filip Gliwa.</span></h1>
+      <h2 style="font-size:clamp(20px,3vw,29px);color:#c5d1e9;margin-top:15px">
+        Fotograf sportowy i twórca internetowy.
+      </h2>
+      <p>
+        Interesuję się fotografią, tworzeniem nowych pomysłów
+        i stale rozwijam swoje umiejętności.
+	To jest miejsce, w którym pokazuję swoje projekty, cele i drogę do ich realizacji.
+      </p>
+      <div class="buttons">
+        <a class="btn primary" href="#projects">Zobacz moje projekty ↗</a>
+        <a class="btn" href="#about">Poznaj mnie</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <span class="section-label">01 / O mnie</span>
+      <h2>Poznajmy się.</h2>
+      <p class="subtitle">Kilka słów o tym, kim jestem i do czego dążę.</p>
+      <div class="about-grid">
+        <div class="panel">
+          <h3>Nie stoję w miejscu.</h3>
+          <p>
+            Lubię poznawać nowe rzeczy, analizować problemy i szukać
+            własnych rozwiązań. Interesuję się informatyką, technologią
+            oraz przedsiębiorczością. Chcę zdobywać praktyczne
+            doświadczenie, realizować własne pomysły i stale podnosić
+            swoje umiejętności.
+          </p>
+          <p>
+            Wierzę, że najlepsze efekty osiąga się dzięki ciekawości,
+            systematycznej pracy i odwadze do próbowania nowych rzeczy.
+          </p>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>01</strong><span>Pomysł i plan</span></div>
+          <div class="stat"><strong>02</strong><span>Nauka i rozwój</span></div>
+          <div class="stat"><strong>03</strong><span>Tworzenie</span></div>
+          <div class="stat"><strong>∞</strong><span>Nowe możliwości</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <span class="section-label">02 / Moja praca</span>
+      <h2>Wybrane projekty.</h2>
+      <p class="subtitle">
+        Tutaj znajdziesz moje pomysły i realizacje. Z czasem pojawi się
+        więcej projektów, nad którymi pracuję.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">💻</div>
+          <h3>Moja pierwsza strona</h3>
+          <p>Portfolio, które rozwijam, ucząc się podstaw HTML i CSS oraz projektowania stron internetowych.</p>
+          <span class="pill">HTML</span><span class="pill">CSS</span>
+        </article>
+        <article class="card">
+          <div class="card-icon">🎮</div>
+          <h3>Pomysł na grę</h3>
+          <p>Miejsce na opis gry, jej mechaniki, świata oraz postępów w realizacji pomysłu.</p>
+          <span class="pill">Game Design</span><span class="pill">Kreatywność</span>
+        </article>
+        <article class="card">
+          <div class="card-icon">🚀</div>
+          <h3>Własny projekt</h3>
+          <p>Przestrzeń na przyszły projekt biznesowy, aplikację lub inne rozwiązanie odpowiadające na realny problem.</p>
+          <span class="pill">Rozwój</span><span class="pill">Innowacje</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <span class="section-label">03 / Kompetencje</span>
+      <h2>Co rozwijam?</h2>
+      <p class="subtitle">Moje zainteresowania i umiejętności, które chcę doskonalić.</p>
+      <div class="skills">
+        <span class="skill">💡 Kreatywne myślenie</span>
+        <span class="skill">🧩 Rozwiązywanie problemów</span>
+        <span class="skill">💻 Programowanie</span>
+        <span class="skill">🌐 Tworzenie stron</span>
+        <span class="skill">📊 Planowanie projektów</span>
+        <span class="skill">📈 Przedsiębiorczość</span>
+        <span class="skill">📚 Ciągła nauka</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <span class="section-label">04 / Kontakt</span>
+        <h2>Masz ciekawy pomysł?</h2>
+        <p>
+          Chętnie poznaję nowe możliwości, rozwijam pomysły i nawiązuję
+          kontakty związane z technologią oraz projektami.
+        </p>
+        <!-- Zmień adres poniżej na swój adres e-mail -->
+        <a class="btn primary" href="mailto:twojemail@example.com">
+          Napisz do mnie ✉
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Twoje Portfolio</span>
+    <span>Stworzone z pasją do technologii.</span>
+    <a href="#home">Powrót na górę ↑</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
